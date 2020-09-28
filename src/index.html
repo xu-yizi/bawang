@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webpack angular bawang</title>
+</head>
+<body>
+    <div ng-app="shop" ng-controller="car">
+        <header ng-style='{{headStyle}}'>
+            <img src="static/images/TB.png" alt="">
+            <div>
+                <input type="text"><a href="">搜索</a>
+            </div>
+        </header>
+        <article>
+            <ul>
+                <li ng-repeat="item in product">
+                    <img ng-src='static/{{item.img}}' ng-click="imgClick()">
+                    <span ng-style='{{priceStyle}}'>¥ {{item.price}}
+                         <em ng-if='item.price<=50' ng-style="{fontSize:'13px',color:'orange'}">*火热促销中*</em>
+                    </span>
+                    <span ng-style='{{fontSize}}'>{{item.name}}</span>
+                </li>
+            </ul>
+        </article>
+        <footer ng-include="'footer.html'"></footer>
+    </div>
+</body>
+</html>
